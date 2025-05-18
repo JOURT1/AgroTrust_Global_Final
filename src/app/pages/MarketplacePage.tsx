@@ -1,9 +1,12 @@
+"use client";
 import React, { useState } from 'react';
 
 import { useAuth } from '../context/AuthContext';
 import { Search, Star, MapPin, Building, DollarSign, Leaf } from 'lucide-react';
 
 import { processWorldAppPayment } from '../utils/paymentHelpers';
+import { AuthButton } from '@/components/AuthButton';
+import Link from 'next/link';
 
 // Imágenes reales y de alta calidad de cacao y banano
 const PRODUCTS = [
@@ -152,11 +155,11 @@ const MarketplacePage: React.FC = () => {
     }}>
       {/* Header del Marketplace */}      <div className="relative py-8">
         <div className="absolute left-4 top-4 z-20">
-          <Link to="/" className="block transition-transform hover:scale-110">
+          <Link href="/" className="block transition-transform hover:scale-110">
             <Leaf style={{ color: PALETTE.green, width: 48, height: 48 }} className="hover:opacity-100 opacity-70" />
           </Link>
         </div>        <div className="absolute right-4 top-4 z-20">
-          {!isAuthenticated && <WalletAuthButton />}
+          {!isAuthenticated && <AuthButton/>}
         </div>
         <div className="text-center relative">
           <h1 className="text-4xl font-bold mb-2" style={{ color: PALETTE.beige }}>Marketplace AgroTrust</h1>

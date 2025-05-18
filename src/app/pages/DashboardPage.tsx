@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import { useAuth } from '../context/AuthContext';
 import { UserCheck, Key, Shield } from 'lucide-react';

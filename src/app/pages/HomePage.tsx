@@ -1,7 +1,9 @@
+"use client";
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import VerificationButton from '../components/VerificationButton';
+
 import { Sprout } from 'lucide-react';
+import Link from 'next/link';
+import { Verify } from '@/components/Verify';
 
 
 const HomePage = () => {
@@ -21,7 +23,7 @@ const HomePage = () => {
           <span className="text-lg font-bold text-green-100">AgroTrust Global</span>
         </div>
         <nav className="flex items-center gap-6 text-sm font-medium">
-          <Link to="/marketplace" className="hover:text-green-400 transition-colors">Marketplace</Link>
+          <Link href="/marketplace" className="hover:text-green-400 transition-colors">Marketplace</Link>
           <span className={`font-semibold ${isConnected ? 'text-green-300' : 'text-red-400'}`}>
             {isConnected ? 'Conectado' : 'No conectado'}
           </span>
@@ -48,7 +50,7 @@ const HomePage = () => {
           </span>
         </div>
         <div className="animate-fadeInUp delay-500" onClick={handleLogin}>
-          <VerificationButton />
+          <Verify/>
         </div>
       </div>
 
